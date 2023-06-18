@@ -1,0 +1,431 @@
+.container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: linear-gradient(to right, #DFE9F3, #FFFFFF);
+    height: 10vh;
+  }
+
+  .logo-image {
+    width: 12rem;
+  }
+
+  .logo-image:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+
+
+  ul#Lin-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  #Lin-1{
+    position: relative;
+    left: 2rem;
+  }
+
+  .navbarLink {
+    margin: 20px;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-size: medium;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    --b: 0.1em;
+    /* the thickness of the line */
+    --c: #1095c1;
+    /* the color */
+    color: #0000;
+    padding-block: var(--b);
+    background:
+      linear-gradient(var(--c) 50%, #000 0) 0% calc(100% - var(--_p, 0%))/100% 200%,
+      linear-gradient(var(--c) 0 0) 0% var(--_p, 0%)/var(--_p, 0%) var(--b) no-repeat;
+    -webkit-background-clip: text, padding-box;
+    background-clip: text, padding-box;
+    transition: .3s var(--_s, 0s) linear, background-size .3s calc(.3s - var(--_s, 0s));
+  }
+  
+  .navbarLink:hover {
+    --_p: 100%;
+    --_s: .3s;
+  }
+  
+  .buttons {
+    gap: 2rem;
+  }
+  
+  
+
+
+
+
+/* ============================================NAVBAR CSS END============================================================ */
+
+/* =================================================PICTURE CSS========================================================================== */
+
+.front-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+  }
+  .right-section{
+    width: 100%;
+  }
+  .right-section img {
+    width: 100%;
+    height: 40rem;
+    border: none;
+    outline:none;
+  }
+
+  .text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+  }
+  
+  .text-overlay h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .text-overlay p {
+    font-size: 1.2rem;
+  }
+  
+  .split-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 20vh;
+  }
+  
+  .split-text span {
+    margin-bottom: 20px; /* Adjust the gap size as needed */
+  }
+
+ .btt {
+    border: none;
+    display: block;
+    position: relative;
+    padding: 0.7em 2.4em;
+    font-size: 18px;
+    background: transparent;
+    cursor: pointer;
+    user-select: none;
+    overflow: hidden;
+    color: black;
+    z-index: 1;
+    font-family: inherit;
+    font-weight: 500;
+  }
+  
+ .btt span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: -1;
+    border: 4px solid black;
+  }
+  
+ .btt span::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 8%;
+    height: 500%;
+    background: var(--lightgray);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-60deg);
+    transition: all 0.3s;
+  }
+  
+ .btt:hover span::before {
+    transform: translate(-50%, -50%) rotate(-90deg);
+    width: 100%;
+    background: black;
+  }
+  
+ .btt:hover {
+    color: white;
+  }
+  
+ .btt:active span::before {
+    background: black;
+  }
+  
+  /* ============================================END OF PIC CSS============================================================= */
+
+
+.carousel-container {
+    display: flex;
+    justify-content: center;
+}
+
+.carousel {
+    height: 70vh;
+    width: 60rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cont {
+    justify-content: center;
+    justify-content: space-evenly;
+}
+
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: black;
+    padding-right: 10rem;
+    background-image: linear-gradient(to right, #DFE9F3, #FFFFFF);
+}
+
+.footer section {
+    margin-left: 10rem;
+}
+
+.footer section ul li a {
+    text-decoration: none;
+
+}
+
+.footer section ul li {
+    list-style: none;
+}
+
+.footer section form {
+    margin-left: 3rem;
+}
+
+
+.hover-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.text {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.Checkout {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 20px;
+
+
+}
+
+.Checkout-image-container {
+    width: 50%;
+    height: 85vh;
+
+}
+
+.Checkout-image {
+    width: 100%;
+    height: 100%;
+}
+
+.Checkout-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    position: relative;
+    top: 10vh;
+
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 16px;
+}
+
+.Checkout-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+    width: 20rem;
+
+}
+
+.btn1 {
+    font-size: 17px;
+    background: transparent;
+    border: none;
+    padding: 1em 1.5em;
+    /* color: #ffedd3; */
+    color: #000;
+    text-transform: uppercase;
+    position: relative;
+    transition: .5s ease;
+}
+
+.btn1::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: #ffc506;
+    transition: .5s ease;
+}
+
+.btn1:hover {
+    color: #1e1e2b;
+    transition-delay: .5s;
+}
+
+.btn1:hover::before {
+    width: 100%;
+}
+
+.btn1::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0;
+    width: 100%;
+    background-color: #ffc506;
+    transition: .4s ease;
+    z-index: -1;
+}
+
+.btn1:hover::after {
+    height: 100%;
+    transition-delay: 0.4s;
+    color: aliceblue;
+}
+
+
+
+
+
+
+
+.box {
+    width: 150px;
+    height: 50px;
+    float: left;
+    transition: .5s linear;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding: 15px;
+    text-align: center;
+    margin: 0 5px;
+    background: transparent;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.box:before {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 100%;
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid transparent;
+    box-sizing: border-box;
+    transform: translateX(100%);
+}
+
+.box:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    border-top: 4px solid transparent;
+    border-right: 4px solid transparent;
+    box-sizing: border-box;
+    transform: translateX(-100%);
+}
+
+.box:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.box:hover:before {
+    border-color: #262626;
+    height: 100%;
+    transform: translateX(0);
+    transition: .3s transform linear, .3s height linear .3s;
+}
+
+.box:hover:after {
+    border-color: #262626;
+    height: 100%;
+    transform: translateX(0);
+    transition: .3s transform linear, .3s height linear .5s;
+}
+
+button {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: transparent;
+}
+
+
+/* ===================MEN CSS======================= */
+.category-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .category-link {
+    margin: 0 10px;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-size: medium;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+  }
+  
+  .category-link.active {
+    color: #1095c1;
+    text-decoration: underline;
+  }
+
+  .Title{
+    height: 30vh;
+  }
+  
+  
