@@ -33,7 +33,7 @@ function Showproduct(){
       <tbody>
         {Productdetails.map((details , index)=>(
             <tr>
-             <img style={{width:"4rem", height:"5rem"}} src={`http://localhost:5000/${details.image}`} alt="" />
+             <img style={{width:"4rem", height:"5rem"}} src={`http://localhost:5001/${details.image}`} alt="" />
              <td>{details.productName}</td>
              <td>{details.productDescription}</td> 
              <td>{details.price}</td>  

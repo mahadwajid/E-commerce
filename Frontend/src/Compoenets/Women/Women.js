@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
@@ -6,25 +6,37 @@ import Row from 'react-bootstrap/Row';
 import { useContext } from "react";
 import Data from "../../Common/Data/Data";
 import { Context } from "../Context";
+import { getDataByCategory } from "../../Service/Api";
 
 
 const WomentContext = createContext();
 function Women(){
     const{handleAddToCart}=useContext(Context);
-    const [womenData, setWomenData] = useState (Data);
-    const women = womenData.filter(item => item.id >=13 && item.id <= 16)
+    const [womenData, setWomenData] = useState([]);
+
+    useEffect(() => {
+      getWomenDetails();
+    },[])
+
+    const getWomenDetails = async () =>
+    {
+      const WomenDetails = await getDataByCategory({category: 'Women'});
+      setWomenData(WomenDetails.data);
+    }
+
+    
     return(
         <div >
 
-            <WomentContext.Provider value={women}>
+            <WomentContext.Provider value={womenData}>
             <Container style={{justifyContent:'center', justifyContent:'space-evenly'}}> 
             <Row xs={1} md={4} >
-            {women.map((data) => (
+            {womenData.map((data) => (
            <Col>
           <Card style={{ width: '80%', margin: '40px' }}>
-            <Card.Img variant="top" src={data.imageUrl} />
+            <Card.Img variant="top" src= {`http://localhost:5000/${data.image} `} />
             <Card.Body>
-              <Card.Title>{data.title}</Card.Title>
+              <Card.Title>{data.productName}</Card.Title>
               <Card.Text>{data.price}</Card.Text>
               <Card.Text>{data.type}</Card.Text>
 

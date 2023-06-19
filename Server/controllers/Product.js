@@ -16,7 +16,7 @@ export const addProduct =async( req , res) =>{
         console.log(savedProduct);
 
         res.json({Response:true , message:'Product Added Successfully '});
-        console.loq("Product added successfully");
+        console.log("Product added successfully");
 
     }
     catch(error){
@@ -34,14 +34,31 @@ export const getProduct = async (req , res) =>{
     }
 }
 
-export const getMenCategory = async (req, res) => {
+export const getProductByCategory = async (req, res) => {
+    const {category} = req.body;
+    console.log(category)
     try {
-      const Menproduct = await db.ProductModel.find({category: 'Men'});
-  
-      res.status(200).json(Menproduct);
+      const Menproduct = await ProductModel.find();
+      const filterProduct = Menproduct.filter((item) => item.category === category)
+        console.log(filterProduct);
+      res.json(filterProduct);
     } catch (error) {
       console.error("Error:", error);
       res.status(500).json({ message: "Internal Server Error" });
     }
   };
   
+  export const getProductById = async (req , res) =>{
+    try{
+        const prId = req.params.productId;
+        const product = await ProductModel.findById(prId);
+        console.log(product);
+        if(!product){
+            return res.status(404).json({message:'Product Not found'});
+        }
+        res.json(product);
+    }catch(error){
+        console.log('Error retriving product details:',error );
+        res.status(500).json({message:'Internal server error'});
+    }
+  };

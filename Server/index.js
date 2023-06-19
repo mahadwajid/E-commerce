@@ -1,4 +1,3 @@
-
 import bodyParser from "body-parser";
 import  express  from "express";
 import cors from 'cors';
@@ -30,5 +29,9 @@ app.use('/Admin/Addproduct', Product);
 app.use('/Admin/Showproduct', Product);
 app.use('/images', express.static('images'));
 
-app.use('/men' , Product);
+app.use('/Men' , Product);
+app.use('Women', Product);
+app.use('/Jewllery',Product);
+
+app.use('/Checkout',Product);
 

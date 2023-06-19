@@ -9,7 +9,7 @@ import "./../Assessts/Style.css";
 import Footer from "./Footer";
 import { Context } from "./Context";
 // import img from '../Images/Logos/image11.png';
-import { getMenData } from '../Service/Api';
+import { getDataByCategory } from '../Service/Api';
 
 function Men() {
   const { deleteImage, handleAddToCart, cartItems } = useContext(Context);
@@ -22,7 +22,7 @@ function Men() {
   }, []);
 
   const getMenProductDetails = async () => {
-    const menData = await getMenData();
+    const menData = await getDataByCategory({category: 'Men'});
     setMenProductData(menData.data);
   };
 

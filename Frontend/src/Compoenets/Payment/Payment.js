@@ -41,14 +41,14 @@ function Payment(){
       <div className="Maindev">
       <h2 className="h2">ORDER SUMMARY</h2>
       {cartItems.map((Items) =>(
-        <div className="left-dev" key={Items.id}>
+        <div className="left-dev" key={Items._id}>
 
         <div className="Det">
           <div className="img">
-            <img src={Items.imageUrl}  alt={Items.title} />
+            <img src={`http://localhost:5000/${Items.image}`} alt={Items.name} />
             </div>
             
-              <span className="tit"> {Items.title}</span>
+              <span className="tit"> {Items.name}</span>
               <span>{Items.quantity}</span>
               <span>{Items.price}</span>
               

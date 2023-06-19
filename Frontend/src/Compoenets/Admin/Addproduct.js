@@ -7,10 +7,10 @@ import { adddetails } from "../../Service/Api";
 
 function Addproduct(){
   const[details , setdetails]=useState({
-    productName:" ",
-    productDescription:" ",
-    category:" ",
-    price:" ",
+    productName:"",
+    productDescription:"",
+    category:"",
+    price:"",
     image:null
   })
 

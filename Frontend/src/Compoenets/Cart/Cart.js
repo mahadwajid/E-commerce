@@ -24,13 +24,13 @@ function Cart() {
       </div>
     <div className="cart-products">
       {cartItems.map((item) => (
-        <div className="search-result-item" key={item.id} onClick={() => {}}>
+        <div className="search-result-item" key={item._id} onClick={() => {}}>
           <div className="image-container">
-            <img src={item.imageUrl} alt={item.title} />
+            <img src={`http://localhost:5000/${item.image}`} alt={item.name} />
           </div>
           <div>
             <div className="prod-details">
-            <span className="name">{item.title}</span>
+            <span className="name">{item.name}</span>
               <div className="quantity-buttons">
                 <span onClick={() => handleCartProductQuantity("dec", item)}>-</span>
                 <span>{item.quantity}</span>

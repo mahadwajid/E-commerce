@@ -7,10 +7,8 @@ export const addSignup =  async(userdata) => {
 }
 
 
-
-
-export const getSignup = async (details) =>{
-  return await axios.get (`${url}/Login`, details)
+export const getSignup = async (email , password) =>{
+  return await axios.get (`${url}/Login`, email , password)
 }
 
 export const adddetails = async (formdata)=>{
@@ -21,6 +19,11 @@ export const getdetails = async () =>{
   return await axios.get(`${url}/Admin/Showproduct`);
 }
 
-export const getMenData = async () =>{
-  return await axios.get(`${url}/men`);
+export const getDataByCategory = async (category) =>{
+  return await axios.post(`${url}/Men/category`, category);
 }
+
+export const  getproductById = async (productId) =>{
+  return await axios.get(`${url}/Checkout/${productId}`);
+}
+

@@ -1,31 +1,52 @@
-import React, { useContext, useMemo, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import "./../Assessts/Style.css";
 import Counter from './Counter';
 import { useNavigate } from 'react-router-dom';
 import { Context } from './Context';
 import { Link } from 'react-router-dom';
+import { getproductById } from '../Service/Api';
 
 function Checkout(props) {
     const { productId } = useParams();
-    const imageDetails = props.images.find((image) => image.id === productId);
+    const [productById, setProductById] = useState([]);
+
+
+    // const imageDetails = props.images.find((image) => image.id === productId);
     const { handleAddToCart } = useContext(Context);
 
     const navigate = useNavigate();
     const [quantity, setQuantity] = useState(1);
+
+    useEffect(() =>{
+        window.scrollTo(0 ,0);
+        getProductdetails();
+        
+    },[]);
+
+    const getProductdetails = async () =>{
+        try {
+            const response = await getproductById(productId);
+            setProductById(response.data);
+            console.log(productById);
+        }catch(error){
+            console.log("Data nor found....")
+
+        }
+    }
 
     const handlecheckout = () => {
         navigate("/Payment");
     }
 
     const totalPrice = useMemo(() => {
-        if (imageDetails) {
-            return parseInt(imageDetails.price) * quantity;
+        if (productById) {
+            return parseInt(productById.price) * quantity;
         }
         return 0;
-    }, [imageDetails, quantity]);
+    }, [productById, quantity]);
 
-    if (!imageDetails) {
+    if (!productById) {
         return <div>Image not found</div>;
     }
 
@@ -45,12 +66,12 @@ function Checkout(props) {
         <div>
             <div className='Checkout'>
                 <div className='Checkout-image-container'>
-                    <img src={imageDetails.imageUrl} alt={imageDetails.title} className='Checkout-image' />
+                    <img src={productById.imageUrl} alt={" "} className='Checkout-image' />
                 </div>
 
                 <div className='Checkout-details'>
-                    <h2>{imageDetails.title}</h2>
-                    <p>Price: {imageDetails.price}</p>
+                    <h2>{productById.name}</h2>
+                    <p>Price: {productById.price}</p>
                     <p>Total Price: {totalPrice}</p>
                     <div style={{ display: 'flex', flexDirection: 'row', gap: '1.5rem', border: '1px solid black', }}>
 
