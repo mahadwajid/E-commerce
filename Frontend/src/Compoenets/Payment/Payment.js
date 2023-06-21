@@ -21,7 +21,7 @@ function Payment(){
           viewBox="0 0 60 60"
           height="60"
           width="60"
-        src={`http://localhost:5000/${item.image}`} alt={item.name} />
+        src={`https://mydata-6mhq.onrender.com/${item.image}`} alt={item.name} />
 
         <div>
           <span>{item.productName}</span>

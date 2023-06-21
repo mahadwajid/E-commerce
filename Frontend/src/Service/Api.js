@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url="http://localhost:5000";
+const url="https://mydata-6mhq.onrender.com";
 
 export const addSignup =  async(userdata) => {
    console.log(userdata);

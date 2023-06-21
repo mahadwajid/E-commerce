@@ -36,7 +36,7 @@ function Women(){
            <Col>
           <Card className="hover-card" style={{ width: '80%', margin: '40px' }}>
             <Link to={`/Checkout/${data._id}`}>
-            <Card.Img variant="top" src= {`http://localhost:5000/${data.image} `} />
+            <Card.Img variant="top" src= {`https://mydata-6mhq.onrender.com/${data.image} `} />
             </Link>
             <Card.Body>
               <Card.Title>{data.productName}</Card.Title>

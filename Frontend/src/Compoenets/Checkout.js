@@ -63,7 +63,7 @@ function Checkout(props) {
         <div>
             <div className='Checkout'>
                 <div className='Checkout-image-container'>
-                    <img src={`http://localhost:5000/${productById.image}`} alt={" "} className='Checkout-image' />
+                    <img src={`https://mydata-6mhq.onrender.com/${productById.image}`} alt={" "} className='Checkout-image' />
                 </div>
 
                 <div className='Checkout-details'>
