@@ -13,7 +13,7 @@ function Payment(){
   return(
     <div class="master-container">
 <div class="card cart">
-  <label class="title">Your cart</label>
+  <label class="title-Payment">Your cart</label>
   <div class="products">
     {cartItems.map((item) => (
       <div class="product">

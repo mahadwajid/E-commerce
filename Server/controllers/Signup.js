@@ -1,12 +1,12 @@
 import SignupModel from "../Models/Signup.js";
 
 export const getSignup = async (req , res) => {
- const { email , password } = req.query;
+ const { email , password } = req.body;
 
 try{
-    const Signup= await SignupModel.findOne({ email , password });
+    const Signup= await SignupModel.findOne({ email });
     
-    if(Signup){
+    if(Signup.pass === password){
         res.json({success : true , Signup});
     }
     else{
@@ -58,7 +58,11 @@ export const createSignup= async (req , res )=> {
 
     }catch (error) {
 
-        console.loq("Not saved...");
+        console.log("Not saved...");
     }
 
 };
+
+
+
+

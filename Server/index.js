@@ -22,6 +22,10 @@ app.listen(5000);
 app.use(cors());
 app.use(bodyParser.json({ extended: true}));
 app.use(bodyParser.urlencoded ({extended:true}));
+
+// app.use('/Signup',(req,res)=>{
+//     console.log(req)
+// });
 app.use('/Signup',Signups);
 app.use('/Login',Signups);
 

@@ -10,7 +10,7 @@ function Login(){
 		password:""
 	});
 
-	const [customerdetails , setcustomerdetails]= useState([]);
+	// const [customerdetails , setcustomerdetails]= useState([]);
 	const{email , password}=details;
 
     const Ref =useRef(null);

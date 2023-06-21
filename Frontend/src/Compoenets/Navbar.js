@@ -36,7 +36,7 @@ function Navbar() {
 
 
       <div  className="navbarLink">
-        <Link to='/login'>
+        <Link to='/Login'>
           <button >   <BiLogIn /> Login</button>
         </Link>
 

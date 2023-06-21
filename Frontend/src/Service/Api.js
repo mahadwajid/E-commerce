@@ -3,12 +3,13 @@ import axios from 'axios';
 const url="http://localhost:5000";
 
 export const addSignup =  async(userdata) => {
+   console.log(userdata);
   return await  axios.post(`${url}/Signup`,userdata);
 }
 
 
 export const getSignup = async (details) =>{
-  return await axios.get (`${url}/Login`, details)
+  return await axios.post (`${url}/Login`, details)
 }
 
 export const adddetails = async (formdata)=>{

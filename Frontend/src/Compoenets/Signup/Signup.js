@@ -7,19 +7,12 @@ import { useNavigate } from 'react-router-dom';
 
 function Signup(){
 
-    // const [fname, setfname]=useState("");
-    // const [lname, setlname]=useState("");
-    // const [email, setemail]=useState("");
-    // const [pass, setpass]=useState("");
-    // const [cpass, setcpass]=useState("");
-
-
     const [userdata , setuserdata] = useState({
-        fname:" ",
-        lname:" ",
+        fname:"",
+        lname:"",
         email:"",
-        pass:" ",
-        cpass:" "
+        pass:"",
+        cpass:""
     })
 
     const { fname , lname ,email , pass , cpass} = userdata;
@@ -36,6 +29,7 @@ function Signup(){
 
     const adddetails = async (event) =>{
       event.preventDefault();
+      console.log(userdata);
       await addSignup(userdata);
       navigate('/Login');
     }

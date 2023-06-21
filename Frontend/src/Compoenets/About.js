@@ -1,8 +1,6 @@
 import React from "react";
 import img from '../Images/Logos/image12.png';
 import img1 from '../Images/Logos/image13.png';
-import Card from 'react-bootstrap/Card';
-import CardGroup from 'react-bootstrap/CardGroup';
 import '../Assessts/About.css';
 import Footer from "./Footer";
 function About(){
