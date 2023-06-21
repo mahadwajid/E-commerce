@@ -6,6 +6,7 @@ import Row from 'react-bootstrap/Row';
 import { useContext } from "react";
 import Data from "../../Common/Data/Data";
 import { Context } from "../Context";
+import { Link } from "react-router-dom";
 import { getDataByCategory } from "../../Service/Api";
 
 
@@ -33,8 +34,10 @@ function Women(){
             <Row xs={1} md={4} >
             {womenData.map((data) => (
            <Col>
-          <Card style={{ width: '80%', margin: '40px' }}>
+          <Card className="hover-card" style={{ width: '80%', margin: '40px' }}>
+            <Link to={`/Checkout/${data._id}`}>
             <Card.Img variant="top" src= {`http://localhost:5000/${data.image} `} />
+            </Link>
             <Card.Body>
               <Card.Title>{data.productName}</Card.Title>
               <Card.Text>{data.price}</Card.Text>

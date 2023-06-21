@@ -11,65 +11,59 @@ function Payment(){
 
 
   return(
-    <div className="Main-dev">
-      <div className="right-dev">
-        
-        <div className="Method">
-        <h1 >PAYMENT</h1>
-          <span>Easypaisa</span>
-          <span>Credit Card</span>
+    <div class="master-container">
+<div class="card cart">
+  <label class="title">Your cart</label>
+  <div class="products">
+    {cartItems.map((item) => (
+      <div class="product">
+        <img fill="none"
+          viewBox="0 0 60 60"
+          height="60"
+          width="60"
+        src={`http://localhost:5000/${item.image}`} alt={item.name} />
+
+        <div>
+          <span>{item.productName}</span>
+          <p>{item.productDescription}</p>
         </div>
-
-        <div className="Details"> 
-          <h3>Shipping Info</h3>
-          <form className="fo"> 
-            <input type="text" placeholder="Full Name" />
-            <input type="text" placeholder="Address" />
-            <input type="text" placeholder="City" />
-            <input  type="text" placeholder="Phone Number" />
-           </form>
-
-           <button>Confirm</button>
-
-        </div>
-
-
+        {/* <div class="quantity">
+         
+        </div> */}
+        <label class="price small">RS{item.price}</label>
       </div>
-
-      
-
-      <div className="Maindev">
-      <h2 className="h2">ORDER SUMMARY</h2>
-      {cartItems.map((Items) =>(
-        <div className="left-dev" key={Items._id}>
-
-        <div className="Det">
-          <div className="img">
-            <img src={`http://localhost:5000/${Items.image}`} alt={Items.name} />
-            </div>
-            
-              <span className="tit"> {Items.name}</span>
-              <span>{Items.quantity}</span>
-              <span>{Items.price}</span>
-              
-                    
-        </div>
-
-        
+    ))}
+  </div>
+</div>
 
 
-      </div>
-      
-
-      )
-      )}
-       <span>Total Price:{cartSubTotal}</span>
-      </div>
-      
+  <div class="card coupons">
+    <label class="title">Apply coupons</label>
+    <form class="form">
+        <input type="text" placeholder="Apply your coupons here" class="input_field" />
+        <button>Apply</button>
+    </form>
+  </div>
 
 
 
+  <div class="card checkout">
+    
+    <label class="title">Checkout</label>
+    <div class="details">
+      <span>Your cart subtotal:</span>
+      <span>{cartSubTotal}</span>
+      <span>Discount through applied coupons:</span>
+      <span>0.0</span>
+      <span>Shipping fees:</span>
+      <span>0.0</span>
     </div>
+    <div class="checkout--footer">
+      <label class="price"><sup>Rs</sup>{cartSubTotal}</label>
+      <button class="checkout-btn">Checkout</button>
+    </div>
+  </div>
+</div>
 
   );
 }

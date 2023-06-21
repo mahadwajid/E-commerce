@@ -7,8 +7,8 @@ export const addSignup =  async(userdata) => {
 }
 
 
-export const getSignup = async (email , password) =>{
-  return await axios.get (`${url}/Login`, email , password)
+export const getSignup = async (details) =>{
+  return await axios.get (`${url}/Login`, details)
 }
 
 export const adddetails = async (formdata)=>{

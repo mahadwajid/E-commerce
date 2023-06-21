@@ -1,19 +1,10 @@
 import React from "react";
-import Carousel from 'react-bootstrap/Carousel';
-import img1 from '../Images/Logos/image1.png'
-import img2 from '../Images/Logos/image2.png'
-import img3 from '../Images/Logos/image3.png'
-import img5 from '../Images/Logos/image5.png'
-import img6 from '../Images/Logos/image6.png'
-import img7 from '../Images/Logos/image7.png'
 import img from '../Images/Logos/image10.png'
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { Container } from "react-bootstrap";
-import CardGroup from 'react-bootstrap/CardGroup';
 import { Link } from "react-router-dom";
-import Jewllery from "./Jewllery/Jewllery";
 import Footer from "./Footer";
 import '../Assessts/Home.css';
 
@@ -142,14 +133,6 @@ function Home() {
                     <span className="notice__copy">I agree to my email address being stored and uses to recieve monthly newsletter.</span>
                 </div>
             </div>
-
-
-
-
-
-
-
-
 
 
 

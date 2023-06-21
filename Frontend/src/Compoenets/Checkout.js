@@ -1,18 +1,15 @@
 import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import "./../Assessts/Style.css";
-import Counter from './Counter';
 import { useNavigate } from 'react-router-dom';
 import { Context } from './Context';
-import { Link } from 'react-router-dom';
+
 import { getproductById } from '../Service/Api';
 
 function Checkout(props) {
     const { productId } = useParams();
     const [productById, setProductById] = useState([]);
 
-
-    // const imageDetails = props.images.find((image) => image.id === productId);
     const { handleAddToCart } = useContext(Context);
 
     const navigate = useNavigate();
@@ -66,11 +63,12 @@ function Checkout(props) {
         <div>
             <div className='Checkout'>
                 <div className='Checkout-image-container'>
-                    <img src={productById.imageUrl} alt={" "} className='Checkout-image' />
+                    <img src={`http://localhost:5000/${productById.image}`} alt={" "} className='Checkout-image' />
                 </div>
 
                 <div className='Checkout-details'>
-                    <h2>{productById.name}</h2>
+                    <h2>{productById.productName}</h2>
+                    <p>{productById.productDescription}</p>
                     <p>Price: {productById.price}</p>
                     <p>Total Price: {totalPrice}</p>
                     <div style={{ display: 'flex', flexDirection: 'row', gap: '1.5rem', border: '1px solid black', }}>

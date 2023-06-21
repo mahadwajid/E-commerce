@@ -27,8 +27,6 @@ function Login(){
 		try{
 
 			const response=await getSignup(details);
-			// setcustomerdetails(result.data);
-			// findCustomer();
 			const {success , Signup}=response.data;
 			if(success){
 				
