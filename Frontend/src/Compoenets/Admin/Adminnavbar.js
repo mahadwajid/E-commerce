@@ -17,8 +17,6 @@ function Adminnavbar(){
 
 
     return(
-
-
       
          <div>
               <Navbar bg="dark" variant="dark">
@@ -26,11 +24,9 @@ function Adminnavbar(){
         <Button  style={{width:"3rem" ,backgroundColor:"transparent", border:"none"}}  onClick={handleShow}>
           < GrMenu style={{border:'1px solid white' , backgroundColor:'white', marginLeft:'-9rem'}}  size={30} />
           </Button>
-          <Navbar.Brand href="#home">MK COLLECTION</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="#DashBoard">DashBoard</Nav.Link>
-            <Nav.Link href="#Products">Products</Nav.Link>
-            <Nav.Link href="#Status">Status</Nav.Link>
+          <Navbar.Brand className="ms-auto"  href="#home">MK COLLECTION</Navbar.Brand>
+          <Nav className=" ms-auto">
+             <input style={{width:"18rem"}} type="text" placeholder="Search.."></input>
           </Nav>
           {show && (
               <Sidebar show = {show} close= {handleClose} />
