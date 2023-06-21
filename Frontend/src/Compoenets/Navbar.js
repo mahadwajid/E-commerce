@@ -2,7 +2,6 @@ import React from "react";
 import { Nav, Dropdown } from "react-bootstrap";
 import { NavLink, Link } from "react-router-dom";
 import "./../Assessts/Style.css";
-import logo from '../Images/Logos/image.png';
 import {FiShoppingCart} from 'react-icons/fi';
 import { BiLogIn } from 'react-icons/bi';
 import img from '../Images/Logos/image9.png'

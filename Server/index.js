@@ -23,9 +23,6 @@ app.use(cors());
 app.use(bodyParser.json({ extended: true}));
 app.use(bodyParser.urlencoded ({extended:true}));
 
-// app.use('/Signup',(req,res)=>{
-//     console.log(req)
-// });
 app.use('/Signup',Signups);
 app.use('/Login',Signups);
 
@@ -38,4 +35,5 @@ app.use('Women', Product);
 app.use('/Jewllery',Product);
 
 app.use('/Checkout',Product);
+
 
