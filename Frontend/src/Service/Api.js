@@ -7,7 +7,6 @@ export const addSignup =  async(userdata) => {
   return await  axios.post(`${url}/Signup`,userdata);
 }
 
-
 export const getSignup = async (details) =>{
   return await axios.post (`${url}/Login`, details)
 }

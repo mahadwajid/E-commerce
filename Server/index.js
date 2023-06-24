@@ -24,7 +24,7 @@ connection.then(() => {
 
 
 app.use('/Signup',Signups);
-// app.use('/Login',route);
+app.use('/Login', Signups);
 
 app.use('/Admin/Addproduct', Product);
 app.use('/Admin/Showproduct', Product);
