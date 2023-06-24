@@ -39,7 +39,7 @@ function Men() {
             <Col key={image._id}>
               <Card className="hover-card" style={{ width: '80%', margin: '40px' }}>
                 <Link to={`/Checkout/${image._id}`}>
-                  <Card.Img variant="top" src={`https://mydata-6mhq.onrender.com/${image.image}`} style={{ width: '100%', height: 'auto' }} />
+                  <Card.Img variant="top" src={`https://mydata-rumz.onrender.com/${image.image}`} style={{ width: '100%', height: 'auto' }} />
                 </Link>
                 <Card.Body>
                   <Card.Title>{image.productName}</Card.Title>

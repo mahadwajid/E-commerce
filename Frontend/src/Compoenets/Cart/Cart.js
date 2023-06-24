@@ -26,7 +26,7 @@ function Cart() {
       {cartItems.map((item) => (
         <div className="search-result-item" key={item._id} onClick={() => {}}>
           <div className="image-container">
-            <img src={`https://mydata-6mhq.onrender.com/${item.image}`} alt={item.name} />
+            <img src={`https://mydata-rumz.onrender.com/${item.image}`} alt={item.name} />
           </div>
           <div>
             <div className="prod-details">

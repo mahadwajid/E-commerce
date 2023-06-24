@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url="https://mydata-6mhq.onrender.com";
+const url="https://mydata-rumz.onrender.com";
 
 export const addSignup =  async(userdata) => {
    console.log(userdata);

@@ -40,7 +40,7 @@ function Jewllery(){
           <Card className="hover-card" style={{ width: '80%', margin: '40px' }}>
             <Link to={`/Checkout/${data._id}`}>
            
-            <Card.Img variant="top"  src={`https://mydata-6mhq.onrender.com/${data.image}`}  />
+            <Card.Img variant="top"  src={`https://mydata-rumz.onrender.com/${data.image}`}  />
 
             </Link>
             <Card.Body>

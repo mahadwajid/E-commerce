@@ -33,7 +33,7 @@ function Showproduct(){
       <tbody>
         {Productdetails.map((details , index)=>(
             <tr>
-             <img style={{width:"4rem", height:"5rem"}} src={`https://mydata-6mhq.onrender.com/${details.image}`} alt="" />
+             <img style={{width:"4rem", height:"5rem"}} src={`https://mydata-rumz.onrender.com/${details.image}`} alt="" />
              <td>{details.productName}</td>
              <td>{details.productDescription}</td> 
              <td>{details.price}</td>  
