@@ -30,8 +30,7 @@ function Signup(){
     const adddetails = async (event) =>{
       event.preventDefault();
       console.log(userdata);
-      await addSignup(userdata);
-      navigate('/Login');
+      const response=await addSignup(userdata);
 
       if (response && response.success) {
         // Display success alert
