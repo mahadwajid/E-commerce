@@ -30,19 +30,9 @@ function Signup(){
     const adddetails = async (event) =>{
       event.preventDefault();
       console.log(userdata);
-      const response=await addSignup(userdata);
-
-      if (response && response.success) {
-        // Display success alert
-        window.alert('Signup successful');
-        navigate('/Login');
-      } else if (response && !response.success) {
-        // Display error alert for incorrect password or login failure
-        window.alert('Incorrect password or login failed');
-      } else {
-        // Display error alert for general error
-        window.alert('An error occurred during signup');
-      }
+      await addSignup(userdata);
+      navigate('/Login');
+      
     }
 
 
