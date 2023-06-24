@@ -23,25 +23,25 @@ try{
 
 
 export const createSignup = async (req, res) => {
-    try {
-      const { fname, lname, email, pass, cpass } = req.body;
-  
-      const newSignup = new SignupModel({
-        fname,
-        lname,
-        email,
-        pass,
-        cpass
-      });
-  
-      const savedSignup = await newSignup.save();
-      res.json(savedSignup);
-      res.status(201).json('Successfully');
-    } catch (error) {
-      console.log('Error saving signup:', error);
-      res.status(400).json({ error: 'Failed to save signup' });
-    }
-  };
+  try {
+    const { fname, lname, email, pass, cpass } = req.body;
+
+    const newSignup = new SignupModel({
+      fname,
+      lname,
+      email,
+      pass,
+      cpass
+    });
+
+    const savedSignup = await newSignup.save();
+    res.status(201).json(savedSignup);
+  } catch (error) {
+    console.log('Error saving signup:', error);
+    res.status(500).json({ error: 'Failed to save signup' });
+  }
+};
+
 
 
 
