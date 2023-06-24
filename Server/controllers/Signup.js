@@ -1,25 +1,28 @@
 import SignupModel from "../Models/Signup.js";
+export const getSignup = async (req, res) => {
+  const { email, password } = req.body;
 
-export const getSignup = async (req , res) => {
- const { email , password } = req.body;
+  // Email validation regex pattern
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-try{
-    const Signup= await SignupModel.findOne({ email });
-    
-    if(Signup.pass === password){
-        res.json({success : true , Signup});
+  // Password validation regex pattern
+  const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
+
+  try {
+    const signup = await SignupModel.findOne({ email });
+
+    // Check if signup exists and the password matches
+    if (signup && signup.pass === password) {
+      res.json({ success: true, signup });
+    } else {
+      res.json({ success: false });
     }
-    else{
-        res.json({success : false});
-    }
+  } catch (error) {
+    console.log("Error:", error);
+    res.json({ success: false });
+  }
+};
 
-}catch(error){
-
-    console.log("Not Found Any data");
-    res.json({success : false});
-}
-;
-}
 
 
 export const createSignup = async (req, res) => {
