@@ -21,47 +21,28 @@ try{
 ;
 }
 
-export const createSignup= async (req , res )=> {
 
-    const fname=req.body.fname;
-    const fnameInStringFormat =fname.toString();
-
-
-    const lname=req.body.lname;
-    const lnameInStringFormat =lname.toString();
-
-    const email=req.body.email;
-    const emailInStringFormat =email.toString();
-
-    const pass=req.body.pass;
-    const passInStringFormat =pass.toString();
-
-    const cpass=req.body.cpass;
-    const cpassInStringFormat =cpass.toString();
-
-
-
-    const newSignup = new SignupModel({
-
-      fname:fnameInStringFormat,
-      lname:lnameInStringFormat,
-      email:emailInStringFormat,
-      pass:passInStringFormat,
-      cpass:cpassInStringFormat
-
-    });
-
-    try{
-
-        await newSignup.save();
-        res.json(newSignup);
-
-    }catch (error) {
-
-        console.log("Not saved...");
+export const createSignup = async (req, res) => {
+    try {
+      const { fname, lname, email, pass, cpass } = req.body;
+  
+      const newSignup = new SignupModel({
+        fname,
+        lname,
+        email,
+        pass,
+        cpass
+      });
+  
+      const savedSignup = await newSignup.save();
+      res.json(savedSignup);
+      res.status(201).json('Successfully');
+    } catch (error) {
+      console.log('Error saving signup:', error);
+      res.status(400).json({ error: 'Failed to save signup' });
     }
+  };
 
-};
 
 
 
