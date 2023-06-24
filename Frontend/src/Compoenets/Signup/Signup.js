@@ -36,9 +36,6 @@ function Signup(){
     }
 
 
-
-    
-
     useEffect(() =>{
         Ref.current.focus();
     },[]);
