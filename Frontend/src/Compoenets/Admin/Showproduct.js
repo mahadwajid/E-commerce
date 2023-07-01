@@ -1,21 +1,36 @@
 import Admin from "./Admin";
 import Table from 'react-bootstrap/Table';
-import { getdetails } from "../../Service/Api";
+import { deleteproductById, getdetails } from "../../Service/Api";
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 
 
 function Showproduct(){
     const [Productdetails , setProductdetails]=useState([]);
+    const { productId } = useParams();
 
     useEffect(() =>{
         getProductdetails();
+        deleteProduct();
     }, []);
 
     const getProductdetails = async () =>{
         const result= await getdetails();
         setProductdetails(result.data);
     }
+
+    const deleteProduct =async () =>{
+      try {
+        await deleteproductById(productId);
+        const updatedProducts = Productdetails.filter((product) => product._productId !== productId);
+        setProductdetails(updatedProducts);
+      } catch (error) {
+        console.log('Error deleting product:', error);
+      }
+    }
+
+
 
     return(
         <div>
@@ -37,6 +52,9 @@ function Showproduct(){
              <td>{details.productName}</td>
              <td>{details.productDescription}</td> 
              <td>{details.price}</td>  
+             <td>
+              <button onClick={() => deleteProduct(details._productId)} > Delete </button>
+             </td>
 
             </tr>
         ))}

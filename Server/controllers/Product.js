@@ -62,3 +62,13 @@ export const getProductByCategory = async (req, res) => {
         res.status(500).json({message:'Internal server error'});
     }
   };
+
+  export const deleteProduct = async (req , res) => {
+    try{
+        const{productId} = req.params;
+        await ProductModel.findByIdAndDelete(productId);
+        res.json({ message: 'Delete Successfully' });
+    }catch (error) {
+        res.status(500).json({error:'Internal Server Errror'});
+    }
+  }

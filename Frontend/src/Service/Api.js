@@ -27,3 +27,8 @@ export const  getproductById = async (productId) =>{
   return await axios.get(`${url}/Checkout/${productId}`);
 }
 
+export const deleteproductById = async (productId) => {
+  return await axios.delete(`${url}/Admin/Showproduct/${productId}`);
+}
+
+
