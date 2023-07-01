@@ -1,35 +1,38 @@
-.Head{
+.Head {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   height: 25vh;
-   background-image: linear-gradient(to right, #446063, #CCD4DD);
-
+  background-image: linear-gradient(to right, #446063, #CCD4DD);
 }
-.cart-products{
+
+.cart-products {
   display: flex;
   flex-direction: column;
 }
-.quantity-buttons{
+
+.quantity-buttons {
   display: flex;
   gap: 1rem;
 }
-.quantity-buttons span{
 
+.quantity-buttons span {
   cursor: pointer;
-
 }
-.image-container{
+
+.image-container {
   width: 20%;
   height: 90%;
   border-radius: 5rem;
 }
-.image-container img{
+
+.image-container img {
   width: 100%;
   height: 100%;
 }
-.prod-details{
+
+.prod-details {
   font-weight: bold;
   display: flex;
   flex-direction: row;
@@ -37,7 +40,8 @@
   align-items: center;
   gap: 4rem;
 }
-.search-result-item{
+
+.search-result-item {
   width: 100%;
   height: 30vh;
   display: flex;
@@ -46,7 +50,8 @@
   align-items: center;
   border: 1px solid black;
 }
-.Pay{
+
+.Pay {
   font-size: larger;
   display: flex;
   flex-direction: column;
@@ -106,5 +111,63 @@
   color: aliceblue;
 }
 
+/* Responsive media queries */
 
+/* For small devices (e.g., smartphones) */
+@media (max-width: 576px) {
+  .image-container {
+    width: 30%;
+  }
+  
+  .prod-details {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .search-result-item {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+  }
+}
 
+/* For medium devices (e.g., tablets) */
+@media (min-width: 577px) and (max-width: 992px) {
+  .Head {
+    height: 20vh;
+  }
+  
+  .image-container {
+    width: 25%;
+  }
+  
+  .search-result-item {
+    flex-wrap: wrap;
+    height: auto;
+  }
+  
+  .Pay {
+    gap: 0.5rem;
+  }
+}
+
+/* For large devices (e.g., laptops and desktops) */
+@media (min-width: 993px) {
+  .Head {
+    height: 30vh;
+  }
+  
+  .image-container {
+    width: 15%;
+  }
+  
+  .search-result-item {
+    flex-wrap: wrap;
+    height: auto;
+  }
+  
+  .Pay {
+    gap: 1rem;
+  }
+}

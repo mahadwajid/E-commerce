@@ -1,51 +1,103 @@
-/* CSS for ProductForm component */
-#Mn01{
-    width: 50rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    
+#Mn01 {
+  width: 50rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
+
 .container {
-    max-width: 400px;
-    margin: 0 auto;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input,
+textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.btnadd {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btnadd:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive media queries */
+
+/* For small devices (e.g., smartphones) */
+@media (max-width: 576px) {
+  #Mn01 {
+    width: 100%;
+    position: static;
+    transform: none;
   }
   
-  h2 {
-    text-align: center;
+  .container {
+    max-width: 100%;
   }
   
   form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
-  }
-  
-  label {
-    font-weight: bold;
+    gap: 5px;
   }
   
   input,
   textarea {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 100%;
+    padding: 6px;
   }
   
-  .btnadd{
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+  .btnadd {
+    padding: 8px 16px;
+  }
+}
+
+/* For medium and large devices (e.g., tablets, laptops, desktops) */
+@media (min-width: 577px) {
+  /* Add any specific styles for medium and large devices here if needed */
+  
+  #Mn01 {
+    width: 40rem;
   }
   
-.btnadd:hover {
-    background-color: #0056b3;
+  .container {
+    max-width: 600px;
   }
   
+  form {
+    gap: 15px;
+  }
   
+  input,
+  textarea {
+    padding: 10px;
+  }
+  
+  .btnadd {
+    padding: 12px 24px;
+  }
+}
+
