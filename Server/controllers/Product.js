@@ -72,3 +72,24 @@ export const getProductByCategory = async (req, res) => {
         res.status(500).json({error:'Internal Server Errror'});
     }
   };
+
+  export const updateProduct = async (req, res) => {
+    const { productId } = req.params;
+    const { productName, productDescription, price } = req.body;
+    try {
+      const updatedProduct = await ProductModel.findByIdAndUpdate(
+        productId,
+        { productName, productDescription, price },
+        { new: true }
+      );
+      if (updatedProduct) {
+        res.sendStatus(204);
+      } else {
+        res.status(404).json({ error: 'Product not found' });
+      }
+    } catch (error) {
+      res.status(500).json({ error: 'Internal server error' });
+    }
+  };
+  
+  

@@ -31,4 +31,8 @@ export const deleteproductById = async (productId) => {
   return await axios.delete(`${url}/Admin/Showproduct/${productId}`);
 }
 
+export const updatedProduct = async (productId, data) => {
+  return await axios.put(`${url}/Admin/Showproduct/${productId}`, data);
+}
+
 
